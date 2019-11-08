@@ -71,7 +71,8 @@ end
 
 def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, holidays|
-    season_string = season.to_str
+    season_string = season.to_s
+    season_string[0] = season_string[0].upcase
     puts "#{season}"
     holidays.each do |holiday, supplies|
       string_supplies = supplies.join(", ")
