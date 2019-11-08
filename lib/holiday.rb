@@ -77,7 +77,6 @@ def all_supplies_in_holidays(holiday_hash)
     holidays.each do |holiday, supplies|
       holiday_string = holiday.to_s
       array_of_words = holiday_string.split("_")
-      p array_of_words
       upcased_words = array_of_words.map do |word| 
         word[0] = word[0].upcase
         word
@@ -99,6 +98,15 @@ def all_supplies_in_holidays(holiday_hash)
 end
 
 def all_holidays_with_bbq(holiday_hash)
+  bbq_holidays = []
+  holiday_hash.each do |season, holidays|
+    holidays.each do |holiday, supplies|
+      if supplies.includes?("BBQ")
+        bbq_holidays << holiday
+      end
+    end
+  end
+  bbq_holidays
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
 
