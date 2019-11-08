@@ -78,7 +78,7 @@ def all_supplies_in_holidays(holiday_hash)
       holiday_string = holiday.to_s
       holiday_string[0] = holiday_string[0].upcase
       string_supplies = supplies.join(", ")
-      puts "#{holiday_string}: #{string_supplies}"
+      puts "   #{holiday_string}: #{string_supplies}"
     end
   end
   holiday_hash
