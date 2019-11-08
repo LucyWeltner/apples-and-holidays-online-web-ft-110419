@@ -78,7 +78,10 @@ def all_supplies_in_holidays(holiday_hash)
       holiday_string = holiday.to_s
       array_of_words = holiday_string.split("_")
       p array_of_words
-      upcased_words = array_of_words.map{|word| word[0] = word[0].upcase word}
+      upcased_words = array_of_words.map do |word| 
+        word[0] = word[0].upcase
+        word
+      end
       upcased_holiday = upcased_words.join(" ")
       string_supplies = supplies.join(", ")
       puts "  #{upcased_holiday}: #{string_supplies}"
